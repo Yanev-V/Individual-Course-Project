@@ -1,7 +1,8 @@
 @using Microsoft.AspNetCore.Identity
+@using F1Cafe.Models
 
-@inject SignInManager<IdentityUser> SignInManager
-@inject UserManager<IdentityUser> UserManager
+@inject SignInManager<F1CafeUser> SignInManager
+@inject UserManager<F1CafeUser> UserManager
 
 @if (SignInManager.IsSignedIn(User))
 {

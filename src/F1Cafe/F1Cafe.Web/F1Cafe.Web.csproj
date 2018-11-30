@@ -14,7 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\F1Cafe.Data\F1Cafe.Data.csproj" />
-    <ProjectReference Include="..\F1Cafe.Models\F1Cafe.Models.csproj" />
+    <ProjectReference Include="..\F1Cafe.Services\F1Cafe.Services.csproj" />
   </ItemGroup>
 
 </Project>

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using F1Cafe.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using F1Cafe.Models;
+using F1Cafe.Data.Models;
 using AutoMapper;
 
 namespace F1Cafe.Web

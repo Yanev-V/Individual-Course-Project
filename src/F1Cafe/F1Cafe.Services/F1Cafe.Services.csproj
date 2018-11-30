@@ -8,4 +8,8 @@
     <Folder Include="Contracts\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\F1Cafe.Data.Models\F1Cafe.Data.Models.csproj" />
+  </ItemGroup>
+
 </Project>

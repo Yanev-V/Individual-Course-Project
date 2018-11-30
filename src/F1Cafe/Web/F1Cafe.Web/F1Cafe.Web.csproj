@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <UserSecretsId>aspnet-F1Cafe.Web-1F3C351E-50CA-4985-B009-CC59AEAEA771</UserSecretsId>
+    <UserSecretsId>aspnet-F1Cafe.Web-4BC10A42-46F4-4B36-8D90-2BEBE905A3B7</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\F1Cafe.Data\F1Cafe.Data.csproj" />
-    <ProjectReference Include="..\F1Cafe.Services\F1Cafe.Services.csproj" />
+    <ProjectReference Include="..\..\Data\F1Cafe.Data.Models\F1Cafe.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Data\F1Cafe.Data\F1Cafe.Data.csproj" />
   </ItemGroup>
 
 </Project>

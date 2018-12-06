@@ -15,6 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using F1Cafe.Data.Models;
 using AutoMapper;
 using F1Cafe.Web.Extensions.Filters;
+using F1Cafe.Web.Extensions.Middlewares;
 
 namespace F1Cafe.Web
 {
@@ -69,6 +70,7 @@ namespace F1Cafe.Web
         {
             if (env.IsDevelopment())
             {
+                app.UseSeedDatabaseMiddleware();
                 app.UseDeveloperExceptionPage();
                 app.UseDatabaseErrorPage();
             }

@@ -36,6 +36,8 @@ namespace F1Cafe.Web.Data
 
         public DbSet<Track> Tracks { get; set; }
 
+        public DbSet<DbExceptionLog> DbExceptionLogs { get; set; }
+
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.ApplyConfiguration(new CarConfiguration());

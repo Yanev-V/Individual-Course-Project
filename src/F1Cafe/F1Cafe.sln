@@ -23,13 +23,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "F1Cafe.Sandbox", "Tests\F1C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "F1Cafe.Data.Common", "Data\F1Cafe.Data.Common\F1Cafe.Data.Common.csproj", "{C6CCF23E-608D-4423-9BC0-FC2843DF2863}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F1Cafe.Services.Mapping", "Services\F1Cafe.Services.Mapping\F1Cafe.Services.Mapping.csproj", "{51039214-948C-4D1A-9695-9259B85519A0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F1Cafe.Services.Common", "Services\F1Cafe.Services.Common\F1Cafe.Services.Common.csproj", "{F4E4B9BC-BA34-46C7-B26C-1100AF521CB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "F1Cafe.Services.Mapping", "Services\F1Cafe.Services.Mapping\F1Cafe.Services.Mapping.csproj", "{51039214-948C-4D1A-9695-9259B85519A0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{779BE488-EDE6-4077-8BCC-24EC429B6575}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F1Cafe.Models", "Models\F1Cafe.Models\F1Cafe.Models.csproj", "{F55B1316-12F7-4E0D-878C-6F372A63C431}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "F1Cafe.Models", "Models\F1Cafe.Models\F1Cafe.Models.csproj", "{F55B1316-12F7-4E0D-878C-6F372A63C431}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "F1Cafe.Common", "F1Cafe.Common\F1Cafe.Common.csproj", "{643CE1BA-62B2-4C6D-87DD-0962514869CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,14 +65,14 @@ Global
 		{51039214-948C-4D1A-9695-9259B85519A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{51039214-948C-4D1A-9695-9259B85519A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{51039214-948C-4D1A-9695-9259B85519A0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F4E4B9BC-BA34-46C7-B26C-1100AF521CB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F4E4B9BC-BA34-46C7-B26C-1100AF521CB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F4E4B9BC-BA34-46C7-B26C-1100AF521CB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F4E4B9BC-BA34-46C7-B26C-1100AF521CB5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F55B1316-12F7-4E0D-878C-6F372A63C431}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F55B1316-12F7-4E0D-878C-6F372A63C431}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F55B1316-12F7-4E0D-878C-6F372A63C431}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F55B1316-12F7-4E0D-878C-6F372A63C431}.Release|Any CPU.Build.0 = Release|Any CPU
+		{643CE1BA-62B2-4C6D-87DD-0962514869CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{643CE1BA-62B2-4C6D-87DD-0962514869CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{643CE1BA-62B2-4C6D-87DD-0962514869CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{643CE1BA-62B2-4C6D-87DD-0962514869CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,7 +85,6 @@ Global
 		{E7379CE1-B8BC-4B08-91B0-048AB2136E12} = {21E7A732-8E86-47A8-BE72-5520450B855E}
 		{C6CCF23E-608D-4423-9BC0-FC2843DF2863} = {A978CFE9-CE34-4FF1-A358-CC22B0C1B304}
 		{51039214-948C-4D1A-9695-9259B85519A0} = {F5159551-E302-4086-9F7E-46E115995809}
-		{F4E4B9BC-BA34-46C7-B26C-1100AF521CB5} = {F5159551-E302-4086-9F7E-46E115995809}
 		{F55B1316-12F7-4E0D-878C-6F372A63C431} = {779BE488-EDE6-4077-8BCC-24EC429B6575}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

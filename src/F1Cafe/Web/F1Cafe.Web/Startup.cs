@@ -14,6 +14,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using F1Cafe.Data.Models;
 using AutoMapper;
+using F1Cafe.Web.Extensions.Filters;
 
 namespace F1Cafe.Web
 {
@@ -58,6 +59,7 @@ namespace F1Cafe.Web
             services.AddMvc(options =>
                 {
                     options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
+                    options.Filters.Add<GlobalExceptionFilter>();
                 })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

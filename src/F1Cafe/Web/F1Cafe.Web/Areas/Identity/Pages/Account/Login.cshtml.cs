@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
@@ -8,7 +7,8 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
+using F1Cafe.Models.InputModels.Account;
+using F1Cafe.Services.Contracts;
 
 namespace F1Cafe.Web.Areas.Identity.Pages.Account
 {
@@ -16,16 +16,17 @@ namespace F1Cafe.Web.Areas.Identity.Pages.Account
     public class LoginModel : PageModel
     {
         private readonly SignInManager<F1CafeUser> signInManager;
-        private readonly ILogger<LoginModel> logger;
+        private readonly IUserService userService;
 
-        public LoginModel(SignInManager<F1CafeUser> signInManager, ILogger<LoginModel> logger)
+        public LoginModel(SignInManager<F1CafeUser> signInManager,
+            IUserService userService)
         {
             this.signInManager = signInManager;
-            this.logger = logger;
+            this.userService = userService;
         }
 
         [BindProperty]
-        public InputModel Input { get; set; }
+        public LoginInputModel Input { get; set; }
 
         public IList<AuthenticationScheme> ExternalLogins { get; set; }
 
@@ -34,25 +35,11 @@ namespace F1Cafe.Web.Areas.Identity.Pages.Account
         [TempData]
         public string ErrorMessage { get; set; }
 
-        public class InputModel
-        {
-            [Required]
-            [EmailAddress]
-            public string Email { get; set; }
-
-            [Required]
-            [DataType(DataType.Password)]
-            public string Password { get; set; }
-
-            [Display(Name = "Remember me?")]
-            public bool RememberMe { get; set; }
-        }
-
         public async Task OnGetAsync(string returnUrl = null)
         {
             if (!string.IsNullOrEmpty(this.ErrorMessage))
             {
-                ModelState.AddModelError(string.Empty, ErrorMessage);
+                this.ModelState.AddModelError(string.Empty, ErrorMessage);
             }
 
             returnUrl = returnUrl ?? Url.Content("~/");
@@ -60,33 +47,32 @@ namespace F1Cafe.Web.Areas.Identity.Pages.Account
             // Clear the existing external cookie to ensure a clean login process
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
 
-            ExternalLogins = (await this.signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+            this.ExternalLogins = (await this.signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
 
-            ReturnUrl = returnUrl;
+            this.ReturnUrl = returnUrl;
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl = returnUrl ?? Url.Content("~/");
 
-            if (ModelState.IsValid)
+            if (this.ModelState.IsValid)
             {
                 // This doesn't count login failures towards account lockout
                 // To enable password failures to trigger account lockout, set lockoutOnFailure: true
-                var result = await this.signInManager.PasswordSignInAsync(this.Input.Email, this.Input.Password, this.Input.RememberMe, lockoutOnFailure: false);
+                var result = await this.userService.Login(this.Input);
 
                 if (result.Succeeded)
                 {
-                    this.logger.LogInformation("User logged in.");
                     return this.LocalRedirect(returnUrl);
                 }
 
-                ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-                return Page();
+                this.ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                return this.Page();
             }
 
             // If we got this far, something failed, redisplay form
-            return Page();
+            return this.Page();
         }
     }
 }

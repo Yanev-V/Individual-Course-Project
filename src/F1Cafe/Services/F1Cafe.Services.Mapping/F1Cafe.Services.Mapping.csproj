@@ -8,4 +8,9 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\F1Cafe.Data.Models\F1Cafe.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Models\F1Cafe.Models\F1Cafe.Models.csproj" />
+  </ItemGroup>
+
 </Project>

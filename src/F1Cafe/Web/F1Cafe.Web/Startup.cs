@@ -16,6 +16,8 @@ using F1Cafe.Data.Models;
 using AutoMapper;
 using F1Cafe.Web.Extensions.Filters;
 using F1Cafe.Web.Extensions.Middlewares;
+using F1Cafe.Services;
+using F1Cafe.Services.Contracts;
 
 namespace F1Cafe.Web
 {
@@ -57,12 +59,25 @@ namespace F1Cafe.Web
 
             services.AddAutoMapper();
 
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.SignIn.RequireConfirmedEmail = false;
+            });
+
+            services.AddAuthentication().AddFacebook(facebookOptions =>
+            {
+                facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
+                facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
+            });
+
             services.AddMvc(options =>
                 {
                     options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
                     options.Filters.Add<GlobalExceptionFilter>();
                 })
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddScoped<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

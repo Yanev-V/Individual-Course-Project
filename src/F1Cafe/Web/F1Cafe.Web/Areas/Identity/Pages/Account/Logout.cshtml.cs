@@ -1,36 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using F1Cafe.Data.Models;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
+using F1Cafe.Services.Contracts;
 
 namespace F1Cafe.Web.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
     public class LogoutModel : PageModel
     {
-        private readonly SignInManager<F1CafeUser> _signInManager;
-        private readonly ILogger<LogoutModel> _logger;
+        private readonly IUserService userService;
 
-        public LogoutModel(SignInManager<F1CafeUser> signInManager, ILogger<LogoutModel> logger)
+        public LogoutModel(IUserService userService)
         {
-            _signInManager = signInManager;
-            _logger = logger;
+            this.userService = userService;
         }
 
         public void OnGet()
         {
         }
 
-        public async Task<IActionResult> OnPost(string returnUrl = null)
+        public IActionResult OnPost(string returnUrl = null)
         {
-            await _signInManager.SignOutAsync();
-            _logger.LogInformation("User logged out.");
+            this.userService.Logout();
+            
             if (returnUrl != null)
             {
                 return LocalRedirect(returnUrl);

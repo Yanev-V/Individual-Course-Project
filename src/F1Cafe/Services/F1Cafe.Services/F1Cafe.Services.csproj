@@ -5,12 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Contracts\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Data\F1Cafe.Data.Models\F1Cafe.Data.Models.csproj" />
     <ProjectReference Include="..\..\Data\F1Cafe.Data\F1Cafe.Data.csproj" />
+    <ProjectReference Include="..\F1Cafe.Services.Mapping\F1Cafe.Services.Mapping.csproj" />
   </ItemGroup>
 
 </Project>

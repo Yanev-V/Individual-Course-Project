@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace F1Cafe.Data.Migrations
 {
     [DbContext(typeof(F1CafeDbContext))]
-    [Migration("20181206083026_ExceptionLogModelAdded")]
+    [Migration("20181206154128_ExceptionLogModelAdded")]
     partial class ExceptionLogModelAdded
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -84,11 +84,11 @@ namespace F1Cafe.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("ActionName")
-                        .IsRequired();
+                    b.Property<string>("Action");
 
-                    b.Property<string>("ControllerName")
-                        .IsRequired();
+                    b.Property<string>("Area");
+
+                    b.Property<string>("Controller");
 
                     b.Property<string>("ExeptionType")
                         .IsRequired();
@@ -97,6 +97,8 @@ namespace F1Cafe.Data.Migrations
 
                     b.Property<string>("Message")
                         .IsRequired();
+
+                    b.Property<string>("Page");
 
                     b.Property<string>("StackTrace")
                         .IsRequired();

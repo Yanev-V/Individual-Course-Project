@@ -17,8 +17,10 @@ namespace F1Cafe.Data.Migrations
                     ExeptionType = table.Column<string>(nullable: false),
                     Message = table.Column<string>(nullable: false),
                     StackTrace = table.Column<string>(nullable: false),
-                    ControllerName = table.Column<string>(nullable: false),
-                    ActionName = table.Column<string>(nullable: false),
+                    Area = table.Column<string>(nullable: true),
+                    Page = table.Column<string>(nullable: true),
+                    Controller = table.Column<string>(nullable: true),
+                    Action = table.Column<string>(nullable: true),
                     LogTime = table.Column<DateTime>(nullable: false),
                     User = table.Column<string>(nullable: false)
                 },

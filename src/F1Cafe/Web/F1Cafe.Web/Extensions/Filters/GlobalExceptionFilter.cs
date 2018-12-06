@@ -25,9 +25,25 @@ namespace F1Cafe.Web.Extensions.Filters
         {
             var exceptionType = context.Exception.GetType().Name;
             var message = context.Exception.Message;
-            var stackTrace = context.Exception.StackTrace;           
-            var controllerName = context.RouteData.Values["controller"].ToString();
-            var actionName = context.RouteData.Values["action"].ToString();
+            var stackTrace = context.Exception.StackTrace;
+
+            var controllerName = string.Empty;
+            var actionName = string.Empty;
+            var area = string.Empty;
+            var page = string.Empty;
+
+            var routeValues = context.RouteData.Values;
+            if (routeValues.ContainsKey("controller"))
+            {
+                controllerName = routeValues["controller"].ToString();
+                actionName = routeValues["action"].ToString();
+            }
+            else if (routeValues.ContainsKey("area"))
+            {
+                area = routeValues["area"].ToString();
+                page = routeValues["page"].ToString();
+            }
+            
             var user = context.HttpContext.User.Identity.Name ?? GlobalConstants.AnonymousUser;
             var logTime = DateTime.UtcNow;
 
@@ -36,8 +52,10 @@ namespace F1Cafe.Web.Extensions.Filters
                 ExeptionType = exceptionType,
                 Message = message,
                 StackTrace = stackTrace,
-                ControllerName = controllerName,
-                ActionName = actionName,
+                Area = area,
+                Page = page,
+                Controller = controllerName,
+                Action = actionName,
                 User = user,
                 LogTime = logTime
             };

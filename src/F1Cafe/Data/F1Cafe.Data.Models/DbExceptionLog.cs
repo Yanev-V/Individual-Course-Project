@@ -15,11 +15,13 @@ namespace F1Cafe.Data.Models
         [Required]
         public string StackTrace { get; set; }
 
-        [Required]
-        public string ControllerName { get; set; }
+        public string Area { get; set; }
 
-        [Required]
-        public string ActionName { get; set; }
+        public string Page { get; set; }
+
+        public string Controller { get; set; }
+
+        public string Action { get; set; }
 
         [Required]
         public DateTime LogTime { get; set; }

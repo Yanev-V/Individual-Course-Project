@@ -35,7 +35,7 @@ namespace F1Cafe.Services
         public async Task<SignInResult> Login(LoginInputModel inputModel)
         {
             var result = await this.signInManager
-                .PasswordSignInAsync(inputModel.Email, inputModel.Password, inputModel.RememberMe, lockoutOnFailure: false);
+                .PasswordSignInAsync(inputModel.UserName, inputModel.Password, inputModel.RememberMe, lockoutOnFailure: false);
 
             if (result.Succeeded)
             {

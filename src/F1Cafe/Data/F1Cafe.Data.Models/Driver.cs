@@ -9,7 +9,6 @@ namespace F1Cafe.Data.Models
     {
         public Driver()
         {
-            this.Results = new HashSet<Result>();
             this.Races = new HashSet<DriversRaces>();
         }
 
@@ -31,11 +30,9 @@ namespace F1Cafe.Data.Models
         public DateTime F1StartYear { get; set; }
 
         public int TeamId { get; set; }
-        [Required]
         public Team Team { get; set; }
 
         public int CarId { get; set; }
-        [Required]
         public Car Car { get; set; }
 
         [Required]
@@ -43,8 +40,6 @@ namespace F1Cafe.Data.Models
 
         public int StatisticsId { get; set; }
         public Statistics Statistics { get; set; }
-
-        public ICollection<Result> Results { get; set; }
 
         public ICollection<DriversRaces> Races { get; set; }
     }

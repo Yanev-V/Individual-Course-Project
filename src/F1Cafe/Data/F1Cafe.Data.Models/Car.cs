@@ -6,7 +6,6 @@ namespace F1Cafe.Data.Models
     public class Car : BaseModel<int>
     {
         public int DriverId { get; set; }
-        [Required]
         public Driver Driver { get; set; }
 
         [Required]
@@ -15,13 +14,15 @@ namespace F1Cafe.Data.Models
         [Required]
         public string PowerUnit { get; set; }
 
-        public string ImageUrl { get; set; }
+        public string FrontImage { get; set; }
 
-        [Required]
-        public int CarNumber { get; set; }
+        public string SideImage { get; set; }
+
+        public string RearImage { get; set; }
+
+        public int? CarNumber => this.Driver.DriverNumber;
 
         public int TeamId { get; set; }
-        [Required]
         public Team Team { get; set; }
     }
 }

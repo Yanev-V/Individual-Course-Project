@@ -7,7 +7,6 @@ namespace F1Cafe.Data.Models
     public class Schedule : BaseModel<int>
     {
         public int RaceId { get; set; }
-        [Required]
         public Race Race { get; set; }
 
         [Required]

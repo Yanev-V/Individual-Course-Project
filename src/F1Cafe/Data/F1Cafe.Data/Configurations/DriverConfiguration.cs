@@ -9,12 +9,6 @@ namespace F1Cafe.Data.Configurations
         public void Configure(EntityTypeBuilder<Driver> builder)
         {
             builder
-                 .HasMany(d => d.Results)
-                 .WithOne(r => r.Driver)
-                 .HasForeignKey(r => r.DriverId)
-                 .OnDelete(DeleteBehavior.Restrict);
-
-            builder
                  .HasMany(d => d.Races)
                  .WithOne(r => r.Driver)
                  .HasForeignKey(d => d.DriverId)

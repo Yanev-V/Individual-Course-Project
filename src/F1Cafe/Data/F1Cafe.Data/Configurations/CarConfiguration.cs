@@ -16,8 +16,8 @@ namespace F1Cafe.Data.Configurations
 
             builder
                  .HasOne(c => c.Team)
-                 .WithOne(t => t.Car)
-                 .HasForeignKey<Team>(t => t.CarId)
+                 .WithMany(t => t.Cars)
+                 .HasForeignKey(c => c.TeamId)
                  .OnDelete(DeleteBehavior.Restrict);
         }
     }

@@ -26,8 +26,6 @@ namespace F1Cafe.Web.Data
 
         public DbSet<Race> Races { get; set; }
 
-        public DbSet<Result> Results { get; set; }
-
         public DbSet<Schedule> Schedules { get; set; }
 
         public DbSet<Statistics> Statistics { get; set; }
@@ -47,7 +45,6 @@ namespace F1Cafe.Web.Data
             builder.ApplyConfiguration(new NewsConfiguration());
             builder.ApplyConfiguration(new OrderConfiguration());
             builder.ApplyConfiguration(new RaceConfiguration());
-            builder.ApplyConfiguration(new ResultConfiguration());
             builder.ApplyConfiguration(new ScheduleConfiguration());
             builder.ApplyConfiguration(new StatisticsConfiguration());
             builder.ApplyConfiguration(new TeamConfiguration());

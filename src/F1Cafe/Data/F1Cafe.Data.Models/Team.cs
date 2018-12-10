@@ -9,6 +9,7 @@ namespace F1Cafe.Data.Models
     {
         public Team()
         {
+            this.Cars = new HashSet<Car>();
             this.Drivers = new HashSet<Driver>();
         }
 
@@ -29,9 +30,9 @@ namespace F1Cafe.Data.Models
         [Required]
         public string TeamChief { get; set; }
 
-        public int CarId { get; set; }
-        [Required]
-        public Car Car { get; set; }
+        public string TeamLogo { get; set; }
+
+        public ICollection<Car> Cars { get; set; }
 
         public ICollection<Driver> Drivers { get; set; }
     }

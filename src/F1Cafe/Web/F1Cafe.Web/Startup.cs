@@ -84,6 +84,9 @@ namespace F1Cafe.Web
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IAdminService, AdminService>();
+            services.AddScoped<ITeamService, TeamService>();
+            services.AddScoped<IDriverService, DriverService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

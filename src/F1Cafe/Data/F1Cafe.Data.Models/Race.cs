@@ -30,7 +30,6 @@ namespace F1Cafe.Data.Models
         public decimal RaceDistance { get; set; }
 
         public int ScheduleId { get; set; }
-        [Required]
         public Schedule Schedule { get; set; }
 
         [Required]

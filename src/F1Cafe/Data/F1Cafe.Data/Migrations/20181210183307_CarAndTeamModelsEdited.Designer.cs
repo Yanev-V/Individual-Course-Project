@@ -4,14 +4,16 @@ using F1Cafe.Web.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace F1Cafe.Data.Migrations
 {
     [DbContext(typeof(F1CafeDbContext))]
-    partial class F1CafeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181210183307_CarAndTeamModelsEdited")]
+    partial class CarAndTeamModelsEdited
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -46,7 +48,8 @@ namespace F1Cafe.Data.Migrations
                     b.HasIndex("DriverId")
                         .IsUnique();
 
-                    b.HasIndex("TeamId");
+                    b.HasIndex("TeamId")
+                        .IsUnique();
 
                     b.ToTable("Cars");
                 });
@@ -363,6 +366,8 @@ namespace F1Cafe.Data.Migrations
                     b.Property<string>("Base")
                         .IsRequired();
 
+                    b.Property<int>("CarId");
+
                     b.Property<DateTime>("EntryYear");
 
                     b.Property<string>("FullName");
@@ -523,8 +528,8 @@ namespace F1Cafe.Data.Migrations
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("F1Cafe.Data.Models.Team", "Team")
-                        .WithMany("Cars")
-                        .HasForeignKey("TeamId")
+                        .WithOne("Car")
+                        .HasForeignKey("F1Cafe.Data.Models.Car", "TeamId")
                         .OnDelete(DeleteBehavior.Restrict);
                 });
 

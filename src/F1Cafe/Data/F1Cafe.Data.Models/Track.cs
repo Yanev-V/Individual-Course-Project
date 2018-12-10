@@ -18,7 +18,6 @@ namespace F1Cafe.Data.Models
         public string ImageUrl { get; set; }
 
         public int RaceId { get; set; }
-        [Required]
         public Race Race { get; set; }
     }
 }

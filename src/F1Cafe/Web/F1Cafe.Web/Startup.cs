@@ -81,7 +81,7 @@ namespace F1Cafe.Web
                     options.Filters.Add<AutoValidateAntiforgeryTokenAttribute>();
                     options.Filters.Add<GlobalExceptionFilter>();
                 })
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IAdminService, AdminService>();

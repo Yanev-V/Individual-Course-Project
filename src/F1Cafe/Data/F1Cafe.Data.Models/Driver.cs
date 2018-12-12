@@ -27,12 +27,12 @@ namespace F1Cafe.Data.Models
         public string Country { get; set; }
 
         [Required]
-        public DateTime F1StartYear { get; set; }
+        public int F1StartYear { get; set; }
 
         public int TeamId { get; set; }
         public Team Team { get; set; }
 
-        public int CarId { get; set; }
+        public int? CarId { get; set; }
         public Car Car { get; set; }
 
         [Required]

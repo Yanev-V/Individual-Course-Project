@@ -25,10 +25,13 @@ namespace F1Cafe.Data.Models
         public string Base { get; set; }
 
         [Required]
-        public DateTime EntryYear { get; set; }
+        public int EntryYear { get; set; }
 
         [Required]
         public string TeamChief { get; set; }
+
+        [Required]
+        public int ChampionshipTitles { get; set; }
 
         public string TeamLogo { get; set; }
 

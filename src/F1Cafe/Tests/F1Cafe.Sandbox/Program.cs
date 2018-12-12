@@ -30,18 +30,18 @@ namespace F1Cafe.Sandbox
 
         private static void SandboxCode(IServiceProvider serviceProvider)
         {
-            var context = serviceProvider.GetService<F1CafeDbContext>();
-            //Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-            var parser = new HtmlParser();
-            var webClient = new WebClient(); /*{ Encoding = Encoding.GetEncoding("windows-1251") };*/
-            var url = "https://en.wikipedia.org/wiki/List_of_Formula_One_driver_numbers";
-            var html = webClient.DownloadString(url);
+            //var context = serviceProvider.GetService<F1CafeDbContext>();
+            ////Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+            //var parser = new HtmlParser();
+            //var webClient = new WebClient(); /*{ Encoding = Encoding.GetEncoding("windows-1251") };*/
+            //var url = "https://en.wikipedia.org/wiki/List_of_Formula_One_driver_numbers";
+            //var html = webClient.DownloadString(url);
 
-            var document = parser.Parse(html);
-            var cellSelector = ".sortable wikitable jquery-tablesorter, tr td:nth-child(2)"?.Trim();
-            var cells = document.QuerySelectorAll(cellSelector);
-            var names = string.Join(Environment.NewLine, cells.Select(m => m.TextContent).ToList());
-            Console.WriteLine(names);
+            //var document = parser.Parse(html);
+            //var cellSelector = ".sortable wikitable jquery-tablesorter, tr td:nth-child(2)"?.Trim();
+            //var cells = document.QuerySelectorAll(cellSelector);
+            //var names = string.Join(Environment.NewLine, cells.Select(m => m.TextContent).ToList());
+            //Console.WriteLine(names);
             //for (var i = 0; i < 1000; i++)
             //{
             //    var url = "https://en.wikipedia.org/wiki/List_of_Formula_One_driver_numbers";

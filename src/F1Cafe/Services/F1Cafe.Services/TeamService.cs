@@ -9,6 +9,7 @@ using F1Cafe.Services.Contracts;
 using F1Cafe.Web.Data;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,6 +18,8 @@ namespace F1Cafe.Services
 {
     public class TeamService : BaseService, ITeamService
     {
+        private const string TeamLogoPath = "/images/teams/{0}_logo.jpg";
+
         public TeamService(F1CafeDbContext dbContext, IMapper mapper)
             : base(dbContext, mapper)
         {
@@ -30,6 +33,8 @@ namespace F1Cafe.Services
             }
 
             var team = this.Mapper.Map<Team>(inputModel);
+
+            team.TeamLogo = string.Format(TeamLogoPath, team.Name);
 
             try
             {

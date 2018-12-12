@@ -4,14 +4,16 @@ using F1Cafe.Web.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace F1Cafe.Data.Migrations
 {
     [DbContext(typeof(F1CafeDbContext))]
-    partial class F1CafeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181212102737_DriverCarIdAllowNull")]
+    partial class DriverCarIdAllowNull
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,11 +37,11 @@ namespace F1Cafe.Data.Migrations
                     b.Property<string>("PowerUnit")
                         .IsRequired();
 
+                    b.Property<string>("RearImage");
+
                     b.Property<string>("SideImage");
 
                     b.Property<int>("TeamId");
-
-                    b.Property<string>("TopImage");
 
                     b.HasKey("Id");
 

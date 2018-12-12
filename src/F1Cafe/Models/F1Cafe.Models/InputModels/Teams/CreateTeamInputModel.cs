@@ -6,10 +6,10 @@ namespace F1Cafe.Models.InputModels.Teams
     public class CreateTeamInputModel
     {
         [Required]
-        [Display(Name = "Team name")]
+        [Display(Name = "Team Name")]
         public string Name { get; set; }
 
-        [Display(Name = "Full name")]
+        [Display(Name = "Full Name")]
         public string FullName { get; set; }
 
         [Required]
@@ -19,11 +19,15 @@ namespace F1Cafe.Models.InputModels.Teams
         public string Base { get; set; }
 
         [Required]
-        [Display(Name = "Entry year")]
-        public DateTime EntryYear { get; set; }
+        [Display(Name = "Entry Year")]
+        public int EntryYear { get; set; }
 
         [Required]
         [Display(Name = "Team Chief")]
         public string TeamChief { get; set; }
+
+        [Required]
+        [Display(Name = "Championship Titles")]
+        public int ChampionshipTitles { get; set; }
     }
 }

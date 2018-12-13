@@ -1,7 +1,11 @@
-﻿
+﻿@model F1Cafe.Models.ViewModels.Teams.AllTeamsViewModel
+
 @{
-    ViewData["Title"] = "All";
+    ViewData["Title"] = "Formula 1 Teams";
 }
 
-<h2>All</h2>
-
+<h1 class="font-weight-bold">@ViewData["Title"]</h1>
+<hr />
+<div class="container">
+    <partial name="_AllTeamsPartial" />
+</div>

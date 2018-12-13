@@ -4,6 +4,7 @@ using F1Cafe.Models.InputModels.Drivers;
 using F1Cafe.Models.InputModels.Teams;
 using F1Cafe.Models.ViewModels.Drivers;
 using F1Cafe.Models.ViewModels.Teams;
+using System.Linq;
 
 namespace F1Cafe.Services.Mapping
 {
@@ -12,7 +13,9 @@ namespace F1Cafe.Services.Mapping
         public AutoMapperProfile()
         {
             this.CreateMap<CreateTeamInputModel, Team>();
-            this.CreateMap<Team, TeamViewModel>();
+            this.CreateMap<Team, TeamViewModel>()
+                .ForMember(dest => dest.FirstDriverName, opt => opt.Ignore())
+                .ForMember(dest => dest.SecondDriverName, opt => opt.Ignore());
 
             this.CreateMap<CreateDriverInputModel, Driver>();
             this.CreateMap<Driver, DriverViewModel>()

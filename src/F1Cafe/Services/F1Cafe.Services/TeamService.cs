@@ -7,6 +7,7 @@ using F1Cafe.Models.InputModels.Teams;
 using F1Cafe.Models.ViewModels.Teams;
 using F1Cafe.Services.Contracts;
 using F1Cafe.Web.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -51,8 +52,10 @@ namespace F1Cafe.Services
 
         public AllTeamsViewModel GetAllTeams()
         {
-            var allTeams = this.DbContext.Teams
-                .Select(t => this.Mapper.Map<TeamViewModel>(t));
+            var dbTeams = this.DbContext.Teams
+                .Include(t => t.Drivers);                
+
+            var allTeams = dbTeams.Select(t => this.Mapper.Map<TeamViewModel>(t));
 
             var allTeamsViewModel = new AllTeamsViewModel { Teams = allTeams };
 

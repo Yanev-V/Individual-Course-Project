@@ -1,0 +1,23 @@
+﻿@model F1Cafe.Models.ViewModels.Teams.AllTeamsViewModel
+
+<div class="row mb-1">
+    @for (int i = 0; i < Model.Teams.Count(); i++)
+    {
+        var team = Model.Teams.ElementAt(i);
+
+        if (i % 4 == 0 && i != 0)
+        {
+            @Html.Raw(" </div><div class=\"row mb-1\">")
+        }
+
+        <div class="card col-md-3" style="width: 18rem;">
+            <img class="card-img-top" src="@team.TeamLogo" alt="Card image cap">
+            <div class="card-body">
+                <h2 class="card-title font-weight-bold">@team.Name</h2>
+                <p class="card-text"><i class="fas fa-user"></i> @team.FirstDriverName</p>
+                <p class="card-text"><i class="fas fa-user"></i> @team.SecondDriverName</p>
+                <a asp-controller="Teams" asp-action="Details" asp-route-id="@team.Id" class="btn btn-sm f1cafe-bg-color text-light">Team Details</a>
+            </div>
+        </div>
+    }
+</div>

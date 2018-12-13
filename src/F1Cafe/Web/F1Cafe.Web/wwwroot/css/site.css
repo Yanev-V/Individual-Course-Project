@@ -92,7 +92,7 @@ a.nav-link:hover {
 
 hr {
     height: 3px;
-    border-color: darkred;
+    border-color: none;
     background-image: linear-gradient(to right, black,red,black);
 }
 

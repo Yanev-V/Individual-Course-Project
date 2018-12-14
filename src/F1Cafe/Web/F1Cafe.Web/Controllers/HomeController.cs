@@ -3,6 +3,7 @@ using F1Cafe.Common;
 
 namespace F1Cafe.Web.Controllers
 {
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public class HomeController : BaseController
     {
         public IActionResult Index()
@@ -10,7 +11,6 @@ namespace F1Cafe.Web.Controllers
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             string message = this.TempData.ContainsKey(GlobalConstants.ErrorMessage)

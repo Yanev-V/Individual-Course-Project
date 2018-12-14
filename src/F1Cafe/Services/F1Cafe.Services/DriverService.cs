@@ -70,5 +70,19 @@ namespace F1Cafe.Services
 
             return allDriversViewModel;
         }
+
+        public async Task<DriverDetailsViewModel> GetDriverDetailsAsync(int id)
+        {
+            var driver = await this.DbContext.Drivers
+                .Include(d => d.Team)
+                .Include(d => d.Statistics)
+                .FirstOrDefaultAsync(d => d.Id == id);
+
+            CoreValidator.ThrowIfNull(driver, new InvalidDriverException());
+
+            var driverDetailsViewModel = this.Mapper.Map<DriverDetailsViewModel>(driver);
+
+            return driverDetailsViewModel;
+        }
     }
 }

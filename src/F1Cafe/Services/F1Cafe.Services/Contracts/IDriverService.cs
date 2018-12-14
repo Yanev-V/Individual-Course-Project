@@ -12,5 +12,7 @@ namespace F1Cafe.Services.Contracts
         Task<int> CreateDriverAsync(CreateDriverInputModel inputModel);
 
         AllDriversViewModel GetAllDrivers();
+
+        Task<DriverDetailsViewModel> GetDriverDetailsAsync(int id);
     }
 }

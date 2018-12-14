@@ -18,6 +18,7 @@ using F1Cafe.Web.Extensions.Filters;
 using F1Cafe.Web.Extensions.Middlewares;
 using F1Cafe.Services;
 using F1Cafe.Services.Contracts;
+using F1Cafe.Services.Mapping;
 
 namespace F1Cafe.Web
 {
@@ -57,6 +58,7 @@ namespace F1Cafe.Web
                 .AddDefaultTokenProviders()
                 .AddEntityFrameworkStores<F1CafeDbContext>();
 
+            Mapper.Initialize(cfg => cfg.AddProfile<AutoMapperProfile>());
             services.AddAutoMapper();
 
             services.Configure<IdentityOptions>(options =>

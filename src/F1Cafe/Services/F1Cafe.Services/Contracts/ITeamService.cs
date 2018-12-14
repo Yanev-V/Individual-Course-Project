@@ -12,5 +12,7 @@ namespace F1Cafe.Services.Contracts
         Task<int> CreateTeamAsync(CreateTeamInputModel inputModel);
 
         AllTeamsViewModel GetAllTeams();
+
+        Task<TeamDetailsViewModel> GetTeamDetailsAsync(int id);
     }
 }

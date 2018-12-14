@@ -1,0 +1,72 @@
+﻿@model F1Cafe.Models.ViewModels.Teams.TeamDetailsViewModel
+
+<div class="row d-flex justify-content-between">
+    <div class="col-md-6">
+        <table class="table table-sm table-borderless">
+            <tbody>
+                <tr>
+                    <th scope="row">
+                        <img class="img-fluid" style="width: 266px; height: 120px;" src="@Model.TeamLogo" alt="Team Logo Image" />
+                    </th>
+                    <td style="vertical-align: middle;"><h1 class="font-weight-bold">@Model.Name</h1></td>
+                </tr>
+                <tr>
+                    <th scope="row">Team Full Name</th>
+                    <td>@Model.FullName</td>
+                </tr>
+                <tr>
+                    <th scope="row">Nationality</th>
+                    <td>@Model.Nationality</td>
+                </tr>
+                <tr>
+                    <th scope="row">Base</th>
+                    <td>@Model.Base</td>
+                </tr>
+                <tr>
+                    <th scope="row">Team Chief</th>
+                    <td>@Model.TeamChief</td>
+                </tr>
+                <tr>
+                    <th scope="row">Chassis</th>
+                    <td>@Model.Car.Chassis</td>
+                </tr>
+                <tr>
+                    <th scope="row">Power Unit</th>
+                    <td>@Model.Car.PowerUnit</td>
+                </tr>
+                <tr>
+                    <th scope="row">Entry Year</th>
+                    <td>@Model.EntryYear</td>
+                </tr>
+                <tr>
+                    <th scope="row">Championship Titles</th>
+                    <td>@Model.ChampionshipTitles</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-6">
+        <div class="row d-flex justify-content-between">
+            <div class="card col-md-6 px-0" style="width: 18rem;">
+                <a asp-controller="Drivers" asp-action="Details" asp-route-id="@Model.FirstDriver.Id">
+                    <img class="card-img-top" src="@Model.FirstDriver.ImageUrl" alt="@Model.FirstDriver.LastName Image">
+                </a>
+                <div class="card-body">
+                    <h1 class="card-title font-weight-bold">@Model.FirstDriver.DriverNumber</h1>
+                    <h5 class="card-title font-weight-bold">@Model.FirstDriver.FirstName @Model.FirstDriver.LastName</h5>
+                    <p class="card-text">Team @Model.Name</p>
+                </div>
+            </div>
+            <div class="card col-md-6 px-0" style="width: 18rem;">
+                <a asp-controller="Drivers" asp-action="Details" asp-route-id="@Model.SecondDriver.Id">
+                    <img class="card-img-top" src="@Model.SecondDriver.ImageUrl" alt="@Model.SecondDriver.LastName Image">
+                </a>
+                <div class="card-body">
+                    <h1 class="card-title font-weight-bold">@Model.SecondDriver.DriverNumber</h1>
+                    <h5 class="card-title font-weight-bold">@Model.SecondDriver.FirstName @Model.SecondDriver.LastName</h5>
+                    <p class="card-text">Team @Model.Name</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

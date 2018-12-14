@@ -36,8 +36,8 @@ namespace F1Cafe.Web.Controllers
             }
 
             var teamId = await this.teamService.CreateTeamAsync(inputModel);
-            
-            return View(); //TODO: Redirect to details
+
+            return this.RedirectToAction(nameof(Details), new { id = teamId });
         }
 
         [HttpGet]
@@ -46,6 +46,14 @@ namespace F1Cafe.Web.Controllers
             var allTeamsViewModel = this.teamService.GetAllTeams();
 
             return this.View(allTeamsViewModel);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Details(int id)
+        {
+            var teamDetailsViewModel = await this.teamService.GetTeamDetailsAsync(id);
+
+            return this.View(teamDetailsViewModel);
         }
     }
 }

@@ -11,8 +11,8 @@
         }
 
         <div class="card col-md-3 px-0" style="width: 18rem;">
-            <a asp-controller="Drivers" asp-action="Details">
-                <img class="card-img-top" src="@driver.ImageUrl" alt="Card image cap">
+            <a asp-controller="Drivers" asp-action="Details" asp-route-id="@driver.Id">
+                <img class="card-img-top" src="@driver.ImageUrl" alt="@driver.FirstName @driver.LastName Image">
             </a>
             <div class="card-body">
                 <h1 class="card-title font-weight-bold">@driver.DriverNumber</h1>

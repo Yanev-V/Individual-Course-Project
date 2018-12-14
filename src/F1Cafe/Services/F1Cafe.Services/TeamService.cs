@@ -61,5 +61,19 @@ namespace F1Cafe.Services
 
             return allTeamsViewModel;
         }
+
+        public async Task<TeamDetailsViewModel> GetTeamDetailsAsync(int id)
+        {
+            var team = await this.DbContext.Teams
+                .Include(t => t.Drivers)
+                .Include(t => t.Cars)
+                .FirstOrDefaultAsync(t => t.Id == id);
+
+            CoreValidator.ThrowIfNull(team, new InvalidTeamException());
+
+            var teamDetailsViewModel = this.Mapper.Map<TeamDetailsViewModel>(team);
+
+            return teamDetailsViewModel;
+        }
     }
 }

@@ -2,7 +2,7 @@
 {
     public class InvalidTeamException : F1CafeBaseException
     {
-        private const string message = "Invalid team name!";
+        private const string message = "Team not found!";
 
         public InvalidTeamException()
             : base(message)

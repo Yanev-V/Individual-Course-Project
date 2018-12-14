@@ -37,7 +37,7 @@ namespace F1Cafe.Web.Controllers
 
             var driverId = await this.driverService.CreateDriverAsync(inputModel);
 
-            return View(); //TODO: Redirect to details
+            return this.RedirectToAction(nameof(Details), new { id = driverId });
         }
 
         [HttpGet]
@@ -46,6 +46,14 @@ namespace F1Cafe.Web.Controllers
             var allDriversViewModel = this.driverService.GetAllDrivers();
 
             return this.View(allDriversViewModel);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Details(int id)
+        {
+            var driverDetailsViewModel = await this.driverService.GetDriverDetailsAsync(id);
+
+            return this.View(driverDetailsViewModel);
         }
     }
 }

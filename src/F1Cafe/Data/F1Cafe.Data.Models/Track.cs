@@ -16,8 +16,5 @@ namespace F1Cafe.Data.Models
         public DateTime TrackRecord { get; set; }
 
         public string ImageUrl { get; set; }
-
-        public int RaceId { get; set; }
-        public Race Race { get; set; }
     }
 }

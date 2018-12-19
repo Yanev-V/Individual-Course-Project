@@ -10,9 +10,11 @@
             @Html.Raw(" </div><div class=\"row mb-1\">")
         }
 
-        <div class="card col-md-3 px-0" style="width: 18rem;">
+        <div class="card shadow col-md-3 px-0" style="width: 18rem;">
             <a asp-controller="Drivers" asp-action="Details" asp-route-id="@driver.Id">
-                <img class="card-img-top" src="@driver.ImageUrl" alt="@driver.FirstName @driver.LastName Image">
+                <div class="zoom">
+                    <img class="card-img-top" src="@driver.ImageUrl" alt="@driver.FirstName @driver.LastName Image">
+                </div>
             </a>
             <div class="card-body">
                 <h1 class="card-title font-weight-bold">@driver.DriverNumber</h1>

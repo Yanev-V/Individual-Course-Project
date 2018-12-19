@@ -45,10 +45,8 @@ namespace F1Cafe.Web.Data
             builder.ApplyConfiguration(new NewsConfiguration());
             builder.ApplyConfiguration(new OrderConfiguration());
             builder.ApplyConfiguration(new RaceConfiguration());
-            builder.ApplyConfiguration(new ScheduleConfiguration());
             builder.ApplyConfiguration(new StatisticsConfiguration());
             builder.ApplyConfiguration(new TeamConfiguration());
-            builder.ApplyConfiguration(new TrackConfiguration());
             builder.ApplyConfiguration(new UserConfiguration());
 
             base.OnModelCreating(builder);

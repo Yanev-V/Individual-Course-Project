@@ -89,6 +89,7 @@ namespace F1Cafe.Web
             services.AddScoped<IAdminService, AdminService>();
             services.AddScoped<ITeamService, TeamService>();
             services.AddScoped<IDriverService, DriverService>();
+            services.AddScoped<IRaceService, RaceService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

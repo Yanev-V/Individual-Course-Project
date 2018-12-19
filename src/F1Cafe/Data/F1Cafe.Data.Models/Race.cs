@@ -1,6 +1,7 @@
 ﻿using F1Cafe.Data.Common;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace F1Cafe.Data.Models
 {
@@ -26,7 +27,7 @@ namespace F1Cafe.Data.Models
         [Required]
         public int NumberOfLaps { get; set; }
 
-        [Required]
+        [NotMapped]
         public decimal RaceDistance { get; set; }
 
         public int ScheduleId { get; set; }
@@ -34,6 +35,8 @@ namespace F1Cafe.Data.Models
 
         [Required]
         public int TotalTickets { get; set; }
+
+        public string ImageUrl { get; set; }
 
         public ICollection<DriversRaces> Drivers { get; set; }
 

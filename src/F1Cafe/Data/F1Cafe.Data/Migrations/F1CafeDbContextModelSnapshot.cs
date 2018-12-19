@@ -284,12 +284,12 @@ namespace F1Cafe.Data.Migrations
                     b.Property<string>("Country")
                         .IsRequired();
 
+                    b.Property<string>("ImageUrl");
+
                     b.Property<string>("Name")
                         .IsRequired();
 
                     b.Property<int>("NumberOfLaps");
-
-                    b.Property<decimal>("RaceDistance");
 
                     b.Property<int>("ScheduleId");
 
@@ -299,11 +299,9 @@ namespace F1Cafe.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ScheduleId")
-                        .IsUnique();
+                    b.HasIndex("ScheduleId");
 
-                    b.HasIndex("TrackId")
-                        .IsUnique();
+                    b.HasIndex("TrackId");
 
                     b.ToTable("Races");
                 });
@@ -321,8 +319,6 @@ namespace F1Cafe.Data.Migrations
                     b.Property<DateTime>("Practice3Start");
 
                     b.Property<DateTime>("QualifyingStart");
-
-                    b.Property<int>("RaceId");
 
                     b.Property<DateTime>("RaceStart");
 
@@ -397,8 +393,6 @@ namespace F1Cafe.Data.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired();
-
-                    b.Property<int>("RaceId");
 
                     b.Property<DateTime>("TrackRecord");
 
@@ -593,14 +587,14 @@ namespace F1Cafe.Data.Migrations
             modelBuilder.Entity("F1Cafe.Data.Models.Race", b =>
                 {
                     b.HasOne("F1Cafe.Data.Models.Schedule", "Schedule")
-                        .WithOne("Race")
-                        .HasForeignKey("F1Cafe.Data.Models.Race", "ScheduleId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .WithMany()
+                        .HasForeignKey("ScheduleId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("F1Cafe.Data.Models.Track", "Track")
-                        .WithOne("Race")
-                        .HasForeignKey("F1Cafe.Data.Models.Race", "TrackId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .WithMany()
+                        .HasForeignKey("TrackId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

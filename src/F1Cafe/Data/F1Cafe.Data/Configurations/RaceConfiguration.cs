@@ -10,20 +10,14 @@ namespace F1Cafe.Data.Configurations
         {
             builder
                  .HasMany(r => r.Drivers)
-                 .WithOne(d => d.Race)
-                 .HasForeignKey(r => r.DriverId)
+                 .WithOne(dr => dr.Race)
+                 .HasForeignKey(dr => dr.DriverId)
                  .OnDelete(DeleteBehavior.Restrict);
 
             builder
-                 .HasOne(r => r.Schedule)
-                 .WithOne(s => s.Race)
-                 .HasForeignKey<Schedule>(c => c.RaceId)
-                 .OnDelete(DeleteBehavior.Restrict);
-
-            builder
-                 .HasOne(r => r.Track)
-                 .WithOne(t => t.Race)
-                 .HasForeignKey<Track>(c => c.RaceId)
+                 .HasMany(r => r.Orders)
+                 .WithOne(o => o.Race)
+                 .HasForeignKey(o => o.RaceId)
                  .OnDelete(DeleteBehavior.Restrict);
         }
     }

@@ -125,3 +125,15 @@ hr {
 #welcome {
     font-size: 50px
 }
+
+.zoom {
+    overflow: hidden;
+}
+
+.zoom img {
+    transition: all 1s ease;
+}
+
+.zoom:hover img {
+    transform: scale(1.2);
+}

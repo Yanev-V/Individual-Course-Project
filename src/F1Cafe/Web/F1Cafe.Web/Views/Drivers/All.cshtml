@@ -1,10 +1,10 @@
 ﻿@model F1Cafe.Models.ViewModels.Drivers.AllDriversViewModel
 
 @{
-    ViewData["Title"] = "Formula 1 Drivers";
+    ViewData["Title"] = "Formula 1 Drivers".ToUpper();
 }
 
-<h1 class="font-weight-bold">@ViewData["Title"]</h1>
+<h2 class="font-weight-bold">@ViewData["Title"]</h2>
 <hr />
 <div class="container">
     <partial name="_AllDriversPartial" />

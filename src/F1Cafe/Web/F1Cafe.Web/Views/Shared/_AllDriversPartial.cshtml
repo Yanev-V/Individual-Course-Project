@@ -7,7 +7,7 @@
 
         if (i % 4 == 0 && i != 0)
         {
-            @Html.Raw(" </div><div class=\"row mb-1\">")
+            @Html.Raw("</div><div class=\"row mb-1\">")
         }
 
         <div class="card shadow col-md-3 px-0" style="width: 18rem;">
@@ -19,7 +19,7 @@
             <div class="card-body">
                 <h1 class="card-title font-weight-bold">@driver.DriverNumber</h1>
                 <h5 class="card-title font-weight-bold">@driver.FirstName @driver.LastName</h5>
-                <p class="card-text">Team @driver.TeamName</p>
+                <p class="card-text">@driver.TeamName.ToUpper()</p>
             </div>
         </div>
     }

@@ -25,10 +25,7 @@ namespace F1Cafe.Data.Models
         public Track Track { get; set; }
 
         [Required]
-        public int NumberOfLaps { get; set; }
-
-        [NotMapped]
-        public decimal RaceDistance { get; set; }
+        public int NumberOfLaps { get; set; }    
 
         public int ScheduleId { get; set; }
         public Schedule Schedule { get; set; }

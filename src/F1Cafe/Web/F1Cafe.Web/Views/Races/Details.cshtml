@@ -1,0 +1,64 @@
+﻿@model F1Cafe.Models.ViewModels.Races.RaceDetailsViewModel
+
+<div class="jumbotron shadow mb-0 px-0 py-0" style="height: 400px;">
+    <img class="darken-img img-fluid rounded-top" src="@Model.ImageUrl" alt="@Model.Name Image">
+    <div class="text-over-img px-4 rounded">
+        <h1 class="font-weight-bold" style="font-size: 4vw;">@Model.Country.ToUpper()</h1>
+        <h1 class="font-weight-bold" style="font-size: 1.5vw;">@Model.RaceWeekend</h1>
+    </div>
+</div>
+<div class="row shadow mx-auto justify-content-center rounded-bottom bg-dark text-white">
+    <div class="col-md-2 text-center">
+        <a id="schedule" class="btn rounded-0">Schedule</a>
+    </div>
+    <div class="col-md-2 border-left border-right text-center">
+        <a id="results" class="btn rounded-0 active">Results</a>
+    </div>
+    <div class="col-md-2 text-center">
+        <a id="track" class="btn rounded-0">Track</a>
+    </div>
+</div>
+<div id="display"></div>
+
+
+@section Scripts {
+    <script>
+        $("#schedule").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/Schedules/Details",
+                data: { "id": @Model.ScheduleId },
+                success: function (result) {
+                    $("#display").html(result);
+                    $("#schedule").css({
+                        "border-bottom": "solid",
+                        "border-bottom-width": "3px",
+                        "border-bottom-color": "darkred"
+                    });
+                    $("#track, #result").css({
+                        "border-bottom": "none"
+                    });
+                }
+            });
+        });
+
+        $("#track").click(function () {
+            $.ajax({
+                type: "GET",
+                url: "/Tracks/Details",
+                data: { "id": @Model.TrackId, "laps": @Model.NumberOfLaps },
+                success: function (result) {
+                    $("#display").html(result);
+                    $("#track").css({
+                        "border-bottom": "solid",
+                        "border-bottom-width": "3px",
+                        "border-bottom-color": "darkred"
+                    });
+                    $("#schedule, #result").css({
+                        "border-bottom": "none"
+                    });
+                }
+            });
+        });
+    </script>
+}

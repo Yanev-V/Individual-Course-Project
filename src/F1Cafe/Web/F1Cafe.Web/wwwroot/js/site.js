@@ -2,3 +2,8 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+
+let allElements = document.getElementsByTagName("hr");
+for (var e of allElements) {
+    e.className = 'rounded';
+}

@@ -1,0 +1,74 @@
+﻿@model F1Cafe.Models.ViewModels.Schedules.ScheduleViewModel
+
+@{
+    ViewData["Title"] = "Schedule";
+}
+
+<h2 class="font-weight-bold mt-3">Race weekend</h2>
+<div class="rounded shadow">
+    <div class="container shadow rounded mb-md-3 py-md-2">
+        <div class="row justify-content-md-start">
+            <div class="col-md-1 pr-md-0">
+                <h5>@Model.RaceStart</h5>
+            </div>
+            <div class="col-md-1 text-md-right">
+                <i class="fas fa-flag-checkered"></i>
+            </div>
+            <div class="col-md-10 px-md-0 text-left">
+                <h5 class="font-weight-bold">Race</h5>
+            </div>
+        </div>
+    </div>
+    <div class="container shadow rounded mb-md-3 py-md-2">
+        <div class="row justify-content-md-start">
+            <div class="col-md-1 pr-md-0">
+                <h5>@Model.QualifyingStart</h5>
+            </div>
+            <div class="col-md-1 text-md-right">
+                <i class="fas fa-flag-checkered"></i>
+            </div>
+            <div class="col-md-10 px-md-0 text-left">
+                <h5 class="font-weight-bold">Qualifying</h5>
+            </div>
+        </div>
+    </div>
+    <div class="container shadow rounded mb-md-3 py-md-2">
+        <div class="row justify-content-md-start">
+            <div class="col-md-1 pr-md-0">
+                <h5>@Model.Practice3Start</h5>
+            </div>
+            <div class="col-md-1 text-md-right">
+                <i class="fas fa-flag-checkered"></i>
+            </div>
+            <div class="col-md-10 px-md-0 text-left">
+                <h5 class="font-weight-bold">Practice 3</h5>
+            </div>
+        </div>
+    </div>
+    <div class="container shadow rounded mb-md-3 py-md-2">
+        <div class="row justify-content-md-start">
+            <div class="col-md-1 pr-md-0">
+                <h5>@Model.Practice2Start</h5>
+            </div>
+            <div class="col-md-1 text-md-right">
+                <i class="fas fa-flag-checkered"></i>
+            </div>
+            <div class="col-md-10 px-md-0 text-left">
+                <h5 class="font-weight-bold">Practice 2</h5>
+            </div>
+        </div>
+    </div>
+    <div class="container shadow rounded mb-md-3 py-md-2">
+        <div class="row justify-content-md-start">
+            <div class="col-md-1 pr-md-0">
+                <h5>@Model.Practice1Start</h5>
+            </div>
+            <div class="col-md-1 text-md-right">
+                <i class="fas fa-flag-checkered"></i>
+            </div>
+            <div class="col-md-10 px-md-0 text-left">
+                <h5 class="font-weight-bold">Practice 1</h5>
+            </div>
+        </div>
+    </div>
+</div>

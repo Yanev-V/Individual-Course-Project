@@ -1,49 +1,51 @@
 ﻿@model F1Cafe.Models.ViewModels.Drivers.DriverDetailsViewModel
 
-<div class="row d-flex justify-content-between">
-    <div class="col-md-6">
-        <img class="img-fluid" src="@Model.ImageUrl" alt="@Model.FirstName @Model.LastName Image" />
-    </div>
-    <div class="col-md-6">
-        <table class="table table-borderless">
-            <tbody>
-                <tr>
-                    <th scope="row"><h1 class="font-weight-bold mb-5">@Model.DriverNumber</h1></th>
-                    <td><h2>@Model.FirstName @Model.LastName</h2></td>
-                </tr>
-                <tr>
-                    <th scope="row">Team</th>
-                    <td>@Model.TeamName</td>
-                </tr>
-                <tr>
-                    <th scope="row">F1 Start Year</th>
-                    <td>@Model.F1StartYear</td>
-                </tr>
-                <tr>
-                    <th scope="row">Participations</th>
-                    <td>@Model.Statistics.Participations</td>
-                </tr>
-                <tr>
-                    <th scope="row">Podiums</th>
-                    <td>@Model.Statistics.Podiums</td>
-                </tr>
-                <tr>
-                    <th scope="row">Total Points</th>
-                    <td>@Model.Statistics.TotalPoints</td>
-                </tr>
-                <tr>
-                    <th scope="row">World Championships</th>
-                    <td>@Model.Statistics.WorldChampionships</td>
-                </tr>
-                <tr>
-                    <th scope="row">Birth Date</th>
-                    <td>@Model.BirthDate</td>
-                </tr>
-                <tr>
-                    <th scope="row">Country</th>
-                    <td>@Model.Country</td>
-                </tr>
-            </tbody>
-        </table>
+<div class="rounded shadow">
+    <div class="row d-flex justify-content-between">
+        <div class="col-md-6">
+            <img class="img-fluid rounded" src="@Model.ImageUrl" alt="@Model.FirstName @Model.LastName Image" />
+        </div>
+        <div class="col-md-6">
+            <table class="table table-borderless">
+                <tbody>
+                    <tr>
+                        <th scope="row"><h1 class="font-weight-bold mb-5">@Model.DriverNumber</h1></th>
+                        <td><h2>@Model.FirstName @Model.LastName</h2></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Team</th>
+                        <td>@Model.TeamName</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">F1 Start Year</th>
+                        <td>@Model.F1StartYear</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Participations</th>
+                        <td>@Model.Statistics.Participations</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Podiums</th>
+                        <td>@Model.Statistics.Podiums</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Total Points</th>
+                        <td>@Model.Statistics.TotalPoints</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">World Championships</th>
+                        <td>@Model.Statistics.WorldChampionships</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Birth Date</th>
+                        <td>@Model.BirthDate</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Country</th>
+                        <td>@Model.Country</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>

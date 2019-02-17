@@ -19,7 +19,17 @@ namespace F1Cafe.Web.Controllers
         [HttpGet]
         public IActionResult All()
         {
-            return this.View();
+            var allRacesViewModel = this.raceService.GetAllRaces();
+
+            return this.View(allRacesViewModel);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> Details(int id)
+        {
+            var raceDetailsViewModel = await this.raceService.GetRaceDetailsAsync(id);
+
+            return this.View(raceDetailsViewModel);
         }
     }
 }

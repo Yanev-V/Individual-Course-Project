@@ -1,0 +1,11 @@
+﻿@model F1Cafe.Models.ViewModels.Races.AllRacesViewModel
+
+@{
+    ViewData["Races"] = (DateTime.UtcNow.Year + " Formula 1 Race Calendar").ToUpper();
+}
+
+<h2 class="font-weight-bold">@ViewData["Races"]</h2>
+<hr />
+<div class="container">
+    <partial name="_AllRacesPartial" />
+</div>

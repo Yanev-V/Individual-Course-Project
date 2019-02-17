@@ -137,3 +137,25 @@ hr {
 .zoom:hover img {
     transform: scale(1.2);
 }
+
+.text-over-img {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.jumbotron img {
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+}
+
+#schedule:hover, #results:hover, #track:hover {
+    border-bottom: solid;
+    border-bottom-width: 3px;
+    border-bottom-color: darkred
+}

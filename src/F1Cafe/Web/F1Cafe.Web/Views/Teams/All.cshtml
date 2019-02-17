@@ -1,10 +1,10 @@
 ﻿@model F1Cafe.Models.ViewModels.Teams.AllTeamsViewModel
 
 @{
-    ViewData["Title"] = "Formula 1 Teams";
+    ViewData["Title"] = "Formula 1 Teams".ToUpper();
 }
 
-<h1 class="font-weight-bold">@ViewData["Title"]</h1>
+<h2 class="font-weight-bold">@ViewData["Title"]</h2>
 <hr />
 <div class="container">
     <partial name="_AllTeamsPartial" />
